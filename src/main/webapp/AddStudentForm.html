@@ -1,0 +1,49 @@
+<script type="text/javascript">
+<!-- //-->
+
+function calcalateAmount(){
+	var finst = $("#finstallment").val();
+	var sinst = $("#secdinstallment").val();
+	var tinst = $("#thirdinstallment").val();
+	var sum = parseInt(finst) + parseInt(sinst) + parseInt(tinst);
+	console.log("sum",sum);
+	$("#paid").val(sum);
+
+	var fees = $("#fee").val();
+	var dues = parseInt(fees) - parseInt(sum);
+	console.log("dues",dues);
+	$("#due").val(dues);
+}
+</script>
+
+<h1>Add Student Form</h1>
+<form action="AddStudent" method="post">
+<table>
+<tr><td>First Name:</td><td><input type="text" name="name" required/></td></tr>
+<tr><td>Middle Name:</td><td><input type="text" name="MiddleName" required/></td></tr>
+<tr><td>Last Name:</td><td><input type="text" name="LastName" required/></td></tr>
+<tr><td>Roll No:</td><td><input type="text" name="rollno" required/></td></tr>
+<!-- <tr><td>Email:</td><td><input type="email" name="email" required/></td></tr> -->
+<tr><td>Sex:</td><td>
+<input type="radio" name="sex" value="male" checked="checked"/> Male
+<input type="radio" name="sex" value="female"/> Female
+</td></tr>
+<tr><td>Course:</td><td>
+<select name="course">
+<option>First</option>
+<option>Second</option>
+<option>Third</option>
+<option>Forth</option>
+</select>
+</td></tr>
+<tr><td>Fee:</td><td><input type="number" name="fee" id="fee" style="text-align: right;"/></td></tr>
+<tr><td>1st Installment:</td><td><input type="number" name="finstallment" id="finstallment" value="0.00" style="text-align: right;" onblur="calcalateAmount()"/></td></tr>
+<tr><td>2nd Installment:</td><td><input type="number" name="secdinstallment" id="secdinstallment" value="0.00" style="text-align: right;" onblur="calcalateAmount()"/></td></tr>
+<tr><td>3rd Installment:</td><td><input type="number" name="thirdinstallment" id="thirdinstallment" value="0.00" style="text-align: right;" onblur="calcalateAmount()"/></td></tr>
+<tr><td>Paid:</td><td><input type="number" name="paid" id="paid" style="text-align: right;font:900;;font-size: 13px;" readonly="readonly"/></td></tr>
+<tr><td>Due:</td><td><input type="number" name="due" id="due" style="text-align: right;" readonly="readonly"/></td></tr>
+<tr><td>Address:</td><td><textarea name="address" style="width:300px;height:100px;" required></textarea></td></tr>
+<tr><td>Contact No:</td><td><input type="text" name="contact"/></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" class="btn btn-default" value="Save Student"/></td></tr>
+</table>
+</form>
