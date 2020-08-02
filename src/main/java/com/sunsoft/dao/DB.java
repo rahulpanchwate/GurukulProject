@@ -5,7 +5,7 @@ public static Connection getCon(){
 	Connection con=null;
 	
 	try{ Class.forName("com.mysql.jdbc.Driver");
-	  con=DriverManager.getConnection("mysql://us-cdbr-east-02.cleardb.com/heroku_8323cf59c4fd5c5?reconnect=true","bf86e4a6725dd1","ed2390ec");
+	  con=DriverManager.getConnection("jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_8323cf59c4fd5c5?reconnect=true","bf86e4a6725dd1","ed2390ec");
 	  if (con!=null)
 		{
 			System.out.println("Connect...");
